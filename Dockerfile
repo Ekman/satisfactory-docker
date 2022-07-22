@@ -4,12 +4,11 @@ LABEL org.opencontainers.image.source="https://github.com/Ekman/satisfactory-doc
 LABEL org.opencontainers.image.authors="Niklas Ekman <nikl.ekman@gmail.com>"
 
 ENV GAME_DIR="$HOMEDIR/game" \
-    CONFIG_DIR="$HOMEDIR/config" \
+    CONFIG_DIR="$HOMEDIR/.config/Epic/FactoryGame/Saved/SaveGames" \
     GAME_ID="1690800" \
     NAME="My server" \
     DEBIAN_FRONTEND="noninteractive" \
-    STEAM_CONFIG_DIR="$HOMEDIR/.config" \
-    SATISFACTORY_CONFIG_DIR="$HOMEDIR/.config/Epic/FactoryGame/Saved/SaveGames"
+    STEAM_CONFIG_DIR="$HOMEDIR/.config"
 
 EXPOSE 15777/udp
 EXPOSE 15000/udp
@@ -21,8 +20,7 @@ RUN apt-get update \
     && apt-get clean \
     && apt-get autoclean \
     && mkdir -p "$GAME_DIR" "$CONFIG_DIR" "$STEAM_CONFIG_DIR" "$HOMEDIR/Steam" \
-    && chown -R "$USER":"$USER" "$GAME_DIR" "$CONFIG_DIR" "$STEAM_CONFIG_DIR" "$HOMEDIR/Steam" \
-    && ln -s "$SATISFACTORY_CONFIG_DIR" "$CONFIG_DIR"
+    && chown -R "$USER":"$USER" "$GAME_DIR" "$CONFIG_DIR" "$STEAM_CONFIG_DIR" "$HOMEDIR/Steam"
      
 ADD --chown="$USER":"$USER" scripts/docker-entrypoint.sh /
 

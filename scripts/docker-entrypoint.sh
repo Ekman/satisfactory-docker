@@ -7,4 +7,4 @@ gosu "$USER" "$STEAMCMDDIR/steamcmd.sh" \
     validate \
     +quit
 
-gosu "$USER" "$GAME_DIR/FactoryServer.sh" -NOSTEAM
+gosu "$USER" "$GAME_DIR/FactoryServer.sh"

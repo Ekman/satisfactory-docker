@@ -1,0 +1,15 @@
+version: "3"
+services:
+  satisfactory:
+    image: ghcr.io/ekman/satisfactory:1
+    build:
+      context: .
+    restart: unless-stopped
+    volumes:
+      - "./config:/home/steam/config"
+      - "./game:/home/steam/game"
+    expose:
+      - 15777:15777/udp
+      - 15000:15000/udp
+      - 7777:7777/udp
+

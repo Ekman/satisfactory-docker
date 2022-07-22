@@ -5,6 +5,7 @@ services:
     build:
       context: .
     restart: unless-stopped
+    read_only: true
     volumes:
       - "./config:/home/steam/.config/Epic/FactoryGame/Saved/SaveGames"
       - "./game:/home/steam/game"
@@ -12,4 +13,3 @@ services:
       - 15777:15777/udp
       - 15000:15000/udp
       - 7777:7777/udp
-

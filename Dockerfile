@@ -26,4 +26,4 @@ ADD --chown="$USER":"$USER" scripts/docker-entrypoint.sh /
 VOLUME [ "$GAME_DIR", "$CONFIG_DIR", "$HOMEDIR/steamcmd" ]
 
 # See: https://github.com/docker-library/official-images#init
-ENTRYPOINT [ "tini", "-v", "-e", "143", "--", "bash", "/docker-entrypoint.sh" ]
+ENTRYPOINT [ "tini", "-ve", "143", "--", "bash", "/docker-entrypoint.sh" ]

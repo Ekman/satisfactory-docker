@@ -6,7 +6,6 @@ LABEL org.opencontainers.image.authors="Niklas Ekman <nikl.ekman@gmail.com>"
 ENV GAME_DIR="$HOMEDIR/game" \
     CONFIG_DIR="$HOMEDIR/.config/Epic/FactoryGame/Saved/SaveGames" \
     GAME_ID="1690800" \
-    NAME="My server" \
     DEBIAN_FRONTEND="noninteractive"
 
 EXPOSE 15777/udp

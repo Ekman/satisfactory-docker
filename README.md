@@ -1,6 +1,6 @@
 # Satisfactory Docker
 
-Run a [Satisfactory](https://store.steampowered.com/app/892970/Satisfactory/) dedicated server using Docker. There are plenty of other solutions out there that has way more features than this.
+Run a [Satisfactory](https://store.steampowered.com/app/526870/Satisfactory/) dedicated server using Docker. There are plenty of other solutions out there that has way more features than this.
 I wanted a bare minimum setup.
 
 ## Installation
@@ -17,7 +17,7 @@ View the [example `docker-compose.yml` file](docker-compose.yml) for indications
 
 ### Ports
 
-Open UDP ports `2456-2458` on your router and forward them to the hosting server/computer.
+Open UDP ports `15777`, `15000` and `7777` on your router and forward them to the hosting server/computer.
 
 ### Volumes
 
@@ -25,20 +25,12 @@ Mount all these volumes to your host.
 
 | Directory inside container | Description |
 | --- | --- |
-| `/home/steam/config` | Contains all save data |
+| `/home/steam/.config/Epic/FactoryGame/Saved/SaveGames` | Contains all save data |
 | `/home/steam/game` | Contains the game files |
 
 ### Configuration
 
-Configure by setting environment variables. See below for an explanation of all available environment variables.
-
-| Name | Description |
-| --- | --- |
-| `NAME` | Name appears in the server browser |
-| `WORLD` | The save files will be named after this |
-| `PORT` | Recommended leaving as default |
-| `PASSWORD` | Users must enter this password to enter your server |
-| `PUBLIC` | Should be `1` or `0`. If `1` then the server will appear in the server browser |
+Configuration is done in game. Add the server to your server manager and configure it accordingly.
 
 
 ### Updating the game files
